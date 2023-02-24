@@ -1,0 +1,19 @@
+{
+  "name": "ex-design",
+  "version": "0.0.1",
+  "description": "基于element ui与vxe-table封装的组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@https://github.com/NiXWai/ex-design.git"
+  },
+  "author": "NiXWai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiXWai/ex-design/issues"
+  },
+  "homepage": "https://github.com/NiXWai/ex-design#readme"
+}
