@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import { ExCard } from '~' 
+import { ExCard } from 'ex-design' 
 </script>
