@@ -1,0 +1,3 @@
+<template>
+  <ex-card/>
+</template>

@@ -5,9 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run -C examples dev",
-    "build": "vite build -C examples build"
+    "build": "pnpm run -C examples build",
+    "docs:dev": "pnpm run -C docs docs:dev",
+    "docs:build": "pnpm run -C docs docs:build"
   },
   "devDependencies": {
     "vite": "^4.1.4"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
   }
 }

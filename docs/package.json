@@ -1,0 +1,30 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "ex-design组件库的使用说明文档",
+  "scripts": {
+    "docs:dev": "pnpm register:components && vitepress dev",
+    "docs:build": "pnpm run register:components && vitepress build",
+    "docs:serve": "vitepress serve",
+    "register:components": "vitepress-rc --docsDir ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ex-design": "workspace:*",
+    "vue": "3.2.44"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "vitepress": "1.0.0-alpha.30",
+    "vitepress-theme-demoblock": "^2.0.2"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  }
+}
