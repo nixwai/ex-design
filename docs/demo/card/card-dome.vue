@@ -1,3 +1,0 @@
-<template>
-  <ex-card/>
-</template>
