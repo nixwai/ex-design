@@ -7,13 +7,23 @@
     "dev": "pnpm run -C examples dev",
     "build": "pnpm run -C examples build",
     "docs:dev": "pnpm run -C docs docs:dev",
-    "docs:build": "pnpm run -C docs docs:build"
+    "docs:build": "pnpm run -C docs docs:build",
+    "prepare": "husky install",
+    "lint": "eslint ./ --ext .js,.ts,.jsx,.tsx,.vue && prettier --write --ignore-unknown"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
     "prettier": "2.8.4"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
