@@ -1,9 +1,11 @@
 ## 基础用法
 
 ::: demo
+
 ```vue
 <template>
-  <ex-card/>
+  <ex-card />
 </template>
 ```
+
 :::

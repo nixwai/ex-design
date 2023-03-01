@@ -1,7 +1,7 @@
-export * from "./components";
+export * from './components';
 
-import { installer as install } from "./installer";
+import { installer as install } from './installer';
 
 export default {
-  install,
+  install
 };

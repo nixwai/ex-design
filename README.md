@@ -1,2 +1,3 @@
 # ex-design
-基于element ui与vxe-table封装的ui组件库
+
+基于 element ui 与 vxe-table 封装的 ui 组件库

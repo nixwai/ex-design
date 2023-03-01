@@ -1,9 +1,9 @@
-import Card from './src/card.vue'
+import Card from './src/card.vue';
 
 Card.install = function (Vue) {
-  Vue.component(Card.name, Card)
-}
+  Vue.component(Card.name, Card);
+};
 
-export const ExCard = Card
+export const ExCard = Card;
 
-export default ExCard
+export default ExCard;

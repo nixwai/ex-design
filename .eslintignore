@@ -1,0 +1,12 @@
+*.sh
+node_modules
+lib
+*.woff
+*.ttf
+.vscode
+.idea
+dist
+.local
+!.env-config.ts
+components.d.ts
+*.yaml

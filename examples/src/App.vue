@@ -1,9 +1,13 @@
 <template>
   <div>
-    <ExCard/>
+    <ex-card id="12" />
   </div>
 </template>
 
-<script setup>
-import { ExCard } from 'ex-design' 
+<script>
+import { ExCard } from 'ex-design';
+
+export default {
+  components: { ExCard }
+};
 </script>
