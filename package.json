@@ -9,7 +9,8 @@
     "docs:dev": "pnpm run -C docs docs:dev",
     "docs:build": "pnpm run -C docs docs:build",
     "prepare": "husky install",
-    "lint": "eslint ./ --ext .js,.ts,.jsx,.tsx,.vue && prettier --write --ignore-unknown"
+    "lint": "eslint ./ --ext .js,.ts,.jsx,.tsx,.vue && prettier --write --ignore-unknown",
+    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
@@ -18,7 +19,18 @@
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
-    "prettier": "2.8.4"
+    "postcss": "^8.4.21",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.6",
+    "prettier": "2.8.4",
+    "sass": "^1.58.3",
+    "stylelint": "^15.2.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-order": "^6.0.2",
+    "stylelint-scss": "^4.4.0"
   },
   "lint-staged": {
     "*.{vue,js,ts,tsx,jsx}": [
