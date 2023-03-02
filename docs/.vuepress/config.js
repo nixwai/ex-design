@@ -8,5 +8,8 @@ module.exports = {
   themeConfig: {
     nav,
     sidebar
+  },
+  chainWebpack(config) {
+    config.resolve.alias.set('core-js/library/fn', 'core-js/features');
   }
 };

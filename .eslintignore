@@ -10,3 +10,4 @@ dist
 !.env-config.ts
 components.d.ts
 *.yaml
+index.html

@@ -1,6 +1,6 @@
 ---
 home: true
-actionText: 开始 →
+actionText: 开始
 actionLink: /guide/install.html
 ---
 

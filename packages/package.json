@@ -1,6 +1,6 @@
 {
   "name": "ex-design",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "基于element ui与vxe-table封装的组件库",
   "main": "index.js",
   "repository": {
@@ -14,6 +14,9 @@
   },
   "homepage": "https://github.com/NiXWai/ex-design#readme",
   "dependencies": {
-    "vue": "2.7.14"
+    "element-ui": "^2.15.13",
+    "vue": "2.7.14",
+    "vxe-table": "^3.6.11",
+    "xe-utils": "^3.5.7"
   }
 }
