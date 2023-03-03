@@ -11,3 +11,4 @@ dist
 components.d.ts
 *.yaml
 index.html
+lib

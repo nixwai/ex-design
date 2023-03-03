@@ -22,7 +22,6 @@ export default {
 </script>
 
 <script setup>
-import { Button as ElButton } from 'element-ui';
 import { computed, onMounted, ref, useAttrs } from 'vue';
 
 const props = defineProps({

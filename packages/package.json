@@ -1,18 +1,17 @@
 {
   "name": "ex-design",
-  "version": "0.0.4",
+  "version": "0.0.10",
   "description": "基于element ui与vxe-table封装的组件库",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git@https://github.com/NiXWai/ex-design.git"
+  "main": "lib/ex-design.mjs",
+  "files": [
+    "lib",
+    "components",
+    "hooks",
+    "utils"
+  ],
+  "scripts": {
+    "build": "vite build"
   },
-  "author": "NiXWai",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NiXWai/ex-design/issues"
-  },
-  "homepage": "https://github.com/NiXWai/ex-design#readme",
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "date-fns": "^2.29.3",
@@ -23,6 +22,18 @@
     "xe-utils": "^3.5.7"
   },
   "devDependencies": {
-    "sass": "^1.58.3"
-  }
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "sass": "^1.58.3",
+    "vite": "^4.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@https://github.com/NiXWai/ex-design.git"
+  },
+  "author": "NiXWai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiXWai/ex-design/issues"
+  },
+  "homepage": "https://github.com/NiXWai/ex-design#readme"
 }

@@ -127,7 +127,7 @@ import { selectProps } from '../../select/src/select';
 import { treeContentProps } from '../../data-tree/src/tree-content';
 import TreeContent from '../../data-tree/src/tree-content.vue';
 import BaseSelect from '../../select/src/base-select.vue';
-import BaseOptions from '../../select/src/base-options';
+import BaseOptions from '../../select/src/base-options.vue';
 import TooltipOptions from './tooltip-options.vue';
 import RenderOptions from './render-options.vue';
 import ExVirtualList from '../../virtual-list';
