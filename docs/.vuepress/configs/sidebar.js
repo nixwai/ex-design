@@ -24,12 +24,26 @@ module.exports = [
       {
         title: 'Form',
         collapsable: false,
-        children: ['/components/select', '/components/more-select', '/components/radio-group']
+        children: [
+          '/components/input',
+          '/components/edit-number',
+          '/components/select',
+          '/components/more-select',
+          '/components/radio-group',
+          '/components/checkbox-group',
+          '/components/cascader',
+          '/components/edit-item'
+        ]
       },
       {
         title: 'Tree',
         collapsable: false,
         children: ['/components/data-tree']
+      },
+      {
+        title: 'Table',
+        collapsable: false,
+        children: ['/components/data-table']
       }
     ]
   }

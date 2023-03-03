@@ -1,0 +1,19 @@
+{
+  "name": "@ex-design/component",
+  "version": "0.0.1",
+  "description": "用于实时导出项目当前ex-design的组件库",
+  "main": "../packages/index.js",
+  "license": "ISC",
+  "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
+    "date-fns": "^2.29.3",
+    "element-ui": "^2.15.13",
+    "lodash-es": "^4.17.21",
+    "vue": "2.7.14",
+    "vxe-table": "^3.6.11",
+    "xe-utils": "^3.5.7"
+  },
+  "devDependencies": {
+    "sass": "^1.58.3"
+  }
+}

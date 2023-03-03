@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@ex-design/component': workspace:^0.0.1
       '@juggle/resize-observer': ^3.4.0
       date-fns: ^2.29.3
       element-ui: ^2.15.13
@@ -30,6 +31,7 @@ importers:
       vxe-table: ^3.6.11
       xe-utils: ^3.5.7
     dependencies:
+      '@ex-design/component': link:component
       '@juggle/resize-observer': 3.4.0
       date-fns: 2.29.3
       element-ui: 2.15.13

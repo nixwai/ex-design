@@ -2,7 +2,7 @@
 
 基于[el-select](https://element.eleme.io/#/zh-CN/component/select)与[vxe-list](https://vxetable.cn/v3/#/table/module/list)二次封装的下拉选择组件。
 
-在继承选择器的基础上，扩展了**大数据虚拟滚动支持**、**提示折叠的已选项**、**自定义下拉框宽度**，如不需要这些功能时，推荐使用此更为轻量的选择器[ExSelect](/#/component/select)。
+在继承选择器的基础上，扩展了**大数据虚拟滚动支持**、**提示折叠的已选项**、**自定义下拉框宽度**，如不需要这些功能时，推荐使用此更为轻量的选择器[ExSelect](/components/select)。
 
 ### 虚拟滚动
 

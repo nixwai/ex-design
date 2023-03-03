@@ -37,7 +37,9 @@ const listRef = ref();
 
 if (props.rowHeight) {
   setTimeout(() => {
-    listRef.value.scrollYStore.rowHeight = props.rowHeight;
+    if (listRef.value?.scrollYStore) {
+      listRef.value.scrollYStore.rowHeight = props.rowHeight;
+    }
   });
 }
 

@@ -2,7 +2,7 @@
 
 基于[el-select](https://element.eleme.io/#/zh-CN/component/select)二次封装的下拉选择组件。
 
-下拉选项可通过属性进行配置，已扩展**全选**、**代理请求**、**大数据支持**功能，如需更多扩展功能请查看复杂选择器[ExMoreSelect](/#/component/more-select)。
+下拉选项可通过属性进行配置，已扩展**全选**、**代理请求**、**大数据支持**功能，如需更多扩展功能请查看复杂选择器[ExMoreSelect](/components/more-select)。
 
 ### 基础用法
 

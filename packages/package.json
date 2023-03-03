@@ -1,6 +1,6 @@
 {
   "name": "ex-design",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "基于element ui与vxe-table封装的组件库",
   "main": "lib/ex-design.mjs",
   "files": [

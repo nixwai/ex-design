@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "ex-design组件库的示例项目",
   "scripts": {
     "dev": "vite",
