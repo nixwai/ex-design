@@ -10,6 +10,7 @@ module.exports = {
   rules: {
     'function-no-unknown': null, // 禁止未知函数：无
     'selector-class-pattern': null, // class命名标准：无
+    'value-keyword-case': ['lower', { ignoreFunctions: ['v-bind'] }], // 大小写限制
     'at-rule-no-unknown': [
       true,
       {

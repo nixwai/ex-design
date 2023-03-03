@@ -30,6 +30,7 @@ module.exports = {
         destructuring: 'any',
         ignoreReadBeforeAssign: false
       }
-    ]
+    ],
+    'no-unsafe-optional-chaining': 'off'
   }
 };

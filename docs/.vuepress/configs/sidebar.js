@@ -10,6 +10,27 @@ module.exports = [
   {
     title: '组件',
     collapsable: false,
-    children: [['/components/card', '卡片']]
+    children: [
+      {
+        title: 'Layout',
+        collapsable: false,
+        children: ['/components/grid', '/components/resize-content']
+      },
+      {
+        title: 'Basic',
+        collapsable: false,
+        children: ['/components/button', '/components/overflow-tip']
+      },
+      {
+        title: 'Form',
+        collapsable: false,
+        children: ['/components/select', '/components/more-select', '/components/radio-group']
+      },
+      {
+        title: 'Tree',
+        collapsable: false,
+        children: ['/components/data-tree']
+      }
+    ]
   }
 ];

@@ -12,6 +12,15 @@
     "lint": "eslint ./ --ext .js,.ts,.jsx,.tsx,.vue && prettier --write --ignore-unknown",
     "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix"
   },
+  "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
+    "date-fns": "^2.29.3",
+    "element-ui": "^2.15.13",
+    "ex-design": "workspace:*",
+    "lodash-es": "^4.17.21",
+    "vxe-table": "^3.6.11",
+    "xe-utils": "^3.5.7"
+  },
   "devDependencies": {
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
@@ -37,5 +46,13 @@
       "eslint --fix",
       "prettier --write --ignore-unknown"
     ]
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "webpack",
+        "vue"
+      ]
+    }
   }
 }

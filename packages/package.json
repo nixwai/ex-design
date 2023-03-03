@@ -14,9 +14,15 @@
   },
   "homepage": "https://github.com/NiXWai/ex-design#readme",
   "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
+    "date-fns": "^2.29.3",
     "element-ui": "^2.15.13",
+    "lodash-es": "^4.17.21",
     "vue": "2.7.14",
     "vxe-table": "^3.6.11",
     "xe-utils": "^3.5.7"
+  },
+  "devDependencies": {
+    "sass": "^1.58.3"
   }
 }
