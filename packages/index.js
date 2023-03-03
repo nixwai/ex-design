@@ -1,9 +1,14 @@
-import { installer as install } from './installer';
-// 全局引入样式
-import 'element-ui/lib/theme-chalk/index.css';
-import 'vxe-table/lib/style.css';
+import { ExButton } from './components/button';
 
-export * from './components';
+const ExComponents = [ExButton];
+
+export { ExButton };
+
+const install = (Vue) => {
+  ExComponents.forEach((comp) => {
+    Vue.component(comp.name, comp);
+  });
+};
 
 export default {
   install

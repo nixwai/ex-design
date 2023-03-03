@@ -1,13 +1,13 @@
 <template>
   <div>
-    <ex-card id="12" />
+    <ex-button />
   </div>
 </template>
 
 <script>
-import { ExCard } from 'ex-design';
+import { ExButton } from 'ex-design';
 
 export default {
-  components: { ExCard }
+  components: { ExButton }
 };
 </script>
