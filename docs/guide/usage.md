@@ -1,8 +1,8 @@
 # 使用
 
-在使用 ex-design 组件时，请务必保证项目中已导入该组件二次封装的对应第三方库（element-ui 或 vxe-table）的组件
+使用 ex-design 组件时，请务必保证项目中已导入该组件二次封装的对应第三方库（element-ui 或 vxe-table）的组件，以减少项目的重复打包资源。
 
-引入样式
+#### 使用前需要 main.js 中引入样式
 
 ```js
 import 'ex-design/lib/style.css';
