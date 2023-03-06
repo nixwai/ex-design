@@ -152,7 +152,7 @@ const initLen = computed(() => {
 
 watch(flatAllOptions, () => {
   nextTick(() => {
-    const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
+    const { data } = treeRef.value?.getCheckedData(props.checkStrategy) ?? {};
     treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
   });
 });

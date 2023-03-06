@@ -18,7 +18,7 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
       treeValue.value = val;
       nextTick(() => {
         if (val?.length) {
-          const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
+          const { data } = treeRef.value?.getCheckedData(props.checkStrategy) ?? {};
           treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
         } else {
           treeCheckedOptions.value = [];
@@ -30,7 +30,7 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
 
   /** 触发树型选择 */
   function handleTreeChange() {
-    const { value, data } = treeRef.value?.getCheckedData(props.checkStrategy);
+    const { value, data } = treeRef.value?.getCheckedData(props.checkStrategy) ?? {};
     treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
     tempValue = value;
     emit('change', value, data);
