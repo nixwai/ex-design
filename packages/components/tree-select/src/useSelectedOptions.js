@@ -9,8 +9,8 @@ export function useSelectedOptions({ props, treeCheckedOptions, initLen }) {
     treeCheckedOptions,
     () => {
       selectVal.value = null;
+      initSelectedOptions();
       nextTick(() => {
-        initSelectedOptions();
         if (!props.value && props.multiple) {
           selectVal.value = [];
           return;

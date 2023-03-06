@@ -17,8 +17,12 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
       tempValue = val;
       treeValue.value = val;
       nextTick(() => {
-        const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
-        treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
+        if (val?.length) {
+          const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
+          treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
+        } else {
+          treeCheckedOptions.value = [];
+        }
       });
     },
     { immediate: true }

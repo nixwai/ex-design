@@ -130,17 +130,14 @@ const flatAllOptions = ref([]);
 const downOptions = ref([]);
 /** 是否折叠tag */
 const isCollapse = computed(() => {
-  if (!props.multiple || !Array.isArray(props.value) || props.value.length <= 1) {
-    return false;
-  }
-  if (props.value.length > props.maxTags) {
+  if (props.value?.length > props.maxTags) {
     return true;
   }
   return props.collapseTags !== false;
 });
 /** 是否显示选项提示 */
 const isTooltip = computed(() => {
-  return isCollapse.value && props.collapseTagsTooltip !== false;
+  return isCollapse.value && props.collapseTagsTooltip !== false && props.value.length > 1;
 });
 /** 是否启用虚拟滚动 */
 const isVirtual = computed(() => {

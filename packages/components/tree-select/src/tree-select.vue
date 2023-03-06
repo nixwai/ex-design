@@ -124,21 +124,43 @@ function handleVisible(val) {
   }
 }
 
+const selectRef = ref();
+const { treeValue, filterText, treeCheckedOptions, handleTreeChange, handleFilterChange } =
+  useTreeOptions(selectRef, treeRef, props, emit);
+
 /** 拍平后的所有下拉选择项 */
 const flatAllOptions = ref([]);
 /** 是否折叠tag */
 const isCollapse = computed(() => {
-  if (!props.multiple || !Array.isArray(props.value) || props.value.length <= 1) {
-    return false;
-  }
-  if (props.value.length > props.maxTags) {
+  if (treeValue.value?.length > props.maxTags) {
     return true;
   }
   return props.collapseTags !== false;
 });
 /** 是否显示选项提示 */
 const isTooltip = computed(() => {
-  return isCollapse.value && props.collapseTagsTooltip !== false;
+  return isCollapse.value && props.collapseTagsTooltip !== false && treeValue.value?.length > 1;
+});
+
+/** 初始化已选择项长度 */
+const initLen = computed(() => {
+  if (isCollapse.value) {
+    return props.collapseTagsTooltip ? 100 : 1;
+  }
+  return Infinity;
+});
+
+watch(flatAllOptions, () => {
+  nextTick(() => {
+    const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
+    treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
+  });
+});
+
+const { selectVal, selectedOptions, setSelectedOptions } = useSelectedOptions({
+  treeCheckedOptions,
+  initLen,
+  props
 });
 
 /** 清空选择 */
@@ -154,31 +176,6 @@ function handleTooltipClose(option) {
   treeRef.value.setNodeSelectByKey(option.value, false);
   emit('remove-tag', option.value);
 }
-
-const selectRef = ref();
-const { treeValue, filterText, treeCheckedOptions, handleTreeChange, handleFilterChange } =
-  useTreeOptions(selectRef, treeRef, props, emit);
-
-/** 初始化已选择项长度 */
-const initLen = computed(() => {
-  if (isCollapse.value) {
-    return props.collapseTagsTooltip ? 100 : 1;
-  }
-  return props.maxTags;
-});
-
-watch(flatAllOptions, () => {
-  nextTick(() => {
-    const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
-    treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
-  });
-});
-
-const { selectVal, selectedOptions, setSelectedOptions } = useSelectedOptions({
-  treeCheckedOptions,
-  initLen,
-  props
-});
 
 defineExpose({
   ...getRefExposeFn(selectRef, ['focus', 'blur', 'commitRequest'])
