@@ -39,11 +39,6 @@ export const selectProps = {
     type: String,
     default: undefined
   },
-  /** 子节点key */
-  childKey: {
-    type: String,
-    default: undefined
-  },
   /** 是否多选 */
   multiple: {
     type: Boolean,

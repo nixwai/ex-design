@@ -1,16 +1,10 @@
-import { ref, watch } from 'vue';
+import { nextTick, ref, watch } from 'vue';
 
 /** 选择为树型 */
 export function useTreeOptions(selectRef, treeRef, props, emit) {
-  if (!props.childKey) {
-    return {
-      treeValue: '',
-      filterText: '',
-      handleTreeChange: () => {},
-      handleFilterChange: () => {}
-    };
-  }
   const treeValue = ref();
+  const treeCheckedOptions = ref([]);
+
   let tempValue;
   // 更新选择项
   watch(
@@ -22,6 +16,10 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
       }
       tempValue = val;
       treeValue.value = val;
+      nextTick(() => {
+        const { data } = treeRef.value?.getCheckedData(props.checkStrategy);
+        treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
+      });
     },
     { immediate: true }
   );
@@ -29,6 +27,7 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
   /** 触发树型选择 */
   function handleTreeChange() {
     const { value, data } = treeRef.value?.getCheckedData(props.checkStrategy);
+    treeCheckedOptions.value = data ? (props.multiple ? data : [data]) : [];
     tempValue = value;
     emit('change', value, data);
     if (!props.multiple) {
@@ -53,6 +52,7 @@ export function useTreeOptions(selectRef, treeRef, props, emit) {
   return {
     treeValue,
     filterText,
+    treeCheckedOptions,
     handleTreeChange,
     handleFilterChange
   };

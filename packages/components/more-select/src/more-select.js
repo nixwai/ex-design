@@ -23,11 +23,6 @@ export const moreSelectProps = {
   collapseTagsTooltip: {
     type: Boolean,
     default: false
-  },
-  /** 节点的绑定值,parent:包括父级；child:仅含子级；all: 包含半选 */
-  checkStrategy: {
-    type: String,
-    default: 'parent'
   }
 };
 

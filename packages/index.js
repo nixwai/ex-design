@@ -12,6 +12,7 @@ import { ExOverflowTip } from './components/overflow-tip';
 import { ExRadioGroup } from './components/radio-group';
 import { ExResizeContent } from './components/resize-content';
 import { ExSelect } from './components/select';
+import { ExTreeSelect } from './components/tree-select';
 
 const ExComponents = [
   ExButton,
@@ -28,7 +29,8 @@ const ExComponents = [
   ExOverflowTip,
   ExRadioGroup,
   ExResizeContent,
-  ExSelect
+  ExSelect,
+  ExTreeSelect
 ];
 
 export {
@@ -47,6 +49,7 @@ export {
   ExRadioGroup,
   ExResizeContent,
   ExSelect,
+  ExTreeSelect,
   setEditComponent
 };
 

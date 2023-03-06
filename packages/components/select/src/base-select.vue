@@ -53,6 +53,11 @@ import AllSelect from './all-select.vue';
 
 const props = defineProps({
   ...selectProps,
+  /** 子节点key */
+  childKey: {
+    type: String,
+    default: undefined
+  },
   /** 显示的下拉选项 */
   downOptions: {
     type: Array,
@@ -84,7 +89,9 @@ const {
   commitRequest
 } = useRequestConfig({ dataKey: 'options', props, emit });
 
+/** 子节点的key */
 const childOrGroupKey = props.childKey || props.groupKey;
+/** 筛选输入的内容 */
 const filterText = ref();
 /** 拍平选择项 */
 const flatOptions = ref([]);
@@ -100,24 +107,6 @@ watch(
   { immediate: true }
 );
 
-/** 筛选选项 */
-function handleFilterMethod(val = '') {
-  filterText.value = val;
-  let filterOptions = [];
-  if (!props.remote || val) {
-    setDataFilterStatus();
-    filterOptions = val
-      ? flatOptions.value.filter(
-          (item) =>
-            (item[childOrGroupKey] && item._IS_CHILD_FILTER) ||
-            (!item[childOrGroupKey] && item._FILTER)
-        )
-      : flatOptions.value;
-  }
-  emit('update:downOptions', filterOptions);
-  emit('filter-change', val);
-}
-
 /** 清空filterText在收起时 */
 function handleVisibleChange(visible) {
   if (!visible && filterText.value) {
@@ -126,6 +115,33 @@ function handleVisibleChange(visible) {
       handleFilterMethod();
     }, 100);
   }
+}
+
+/** 筛选选项 */
+function handleFilterMethod(inputText = '') {
+  filterText.value = inputText;
+  let filterOptions = [];
+  if (!props.remote || inputText) {
+    setDataFilterStatus();
+    if (inputText) {
+      filterOptions = flatOptions.value.filter(
+        (item) =>
+          (item[childOrGroupKey] && item._IS_CHILD_FILTER) ||
+          (!item[childOrGroupKey] && item._FILTER)
+      );
+    } else {
+      filterOptions = flatOptions.value;
+    }
+  }
+  emit('update:downOptions', filterOptions);
+  emit('filter-change', inputText);
+}
+
+/** 设置的筛选状态 */
+function setDataFilterStatus() {
+  const searchMethod =
+    typeof props.filterMethod === 'function' ? props.filterMethod : defaultFilterMethod;
+  filterTreeArray(flatOptions.value, childOrGroupKey, searchMethod, !filterText.value);
 }
 
 /** 默认筛选方法 */
@@ -140,24 +156,6 @@ function defaultFilterMethod(node) {
     if (res) {
       return true;
     }
-  }
-}
-
-/** 搜索方法 */
-const searchMethod =
-  typeof props.filterMethod === 'function' ? props.filterMethod : defaultFilterMethod;
-
-/** 设置的筛选状态 */
-function setDataFilterStatus() {
-  if (filterText.value) {
-    filterTreeArray(flatOptions.value, childOrGroupKey, searchMethod);
-  } else {
-    flatOptions.value.forEach((item) => {
-      item._FILTER = false;
-      item._FILTER_RELATE = true;
-      item._IS_CHILD_FILTER = false;
-      return item;
-    });
   }
 }
 

@@ -59,9 +59,18 @@ function transformTreeToArray({
  * @param {array} list 数据
  * @param {string} childKey 子节点名
  * @param {function} filterMethod 筛选函数: (item)=>boolean
+ * @param {boolean} init 是否仅初始化筛选状态
  *  */
-export function filterTreeArray(list, childKey, filterMethod) {
+export function filterTreeArray(list, childKey, filterMethod, init = false) {
   if (!Array.isArray(list)) {
+    return;
+  }
+  if (init) {
+    list.forEach((item) => {
+      item._FILTER = false;
+      item._FILTER_RELATE = true;
+      item._IS_CHILD_FILTER = false;
+    });
     return;
   }
   for (let i = list.length - 1; i >= 0; i--) {

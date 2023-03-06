@@ -15,7 +15,7 @@
       <span
         ref="textRef"
         class="ex-content-text"
-        :class="{ 'no-warp': ellipsis }"
+        :class="{ 'ex-no-warp': ellipsis }"
         :style="{ maxWidth }"
         @mouseenter="handleMouseenter"
         @mouseleave="handleMouseleave"

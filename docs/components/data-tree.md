@@ -179,6 +179,7 @@ export default {
       type="radio"
       show-header
       deep
+      :resizable="false"
       :check-on-click-node="false"
       :highlight-current="false"
       style="width:200px;height: 300px"

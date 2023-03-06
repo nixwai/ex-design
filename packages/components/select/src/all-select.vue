@@ -80,7 +80,7 @@ function handleClick() {
   cursor: pointer;
 }
 
-.select-text:hover {
+.ex-select-text:hover {
   color: #409eff;
 }
 </style>

@@ -142,22 +142,11 @@ function defaultFilterMethod(node) {
   }
 }
 
-/** 搜索方法 */
-const searchMethod =
-  typeof props.filterMethod === 'function' ? props.filterMethod : defaultFilterMethod;
-
 /** 设置树的筛选状态 */
 function setDataFilterStatus() {
-  if (filterText.value) {
-    filterTreeArray(flatData.value, props.childKey, searchMethod);
-  } else {
-    flatData.value.forEach((item) => {
-      item._FILTER = false;
-      item._FILTER_RELATE = true;
-      item._IS_CHILD_FILTER = false;
-      return item;
-    });
-  }
+  const searchMethod =
+    typeof props.filterMethod === 'function' ? props.filterMethod : defaultFilterMethod;
+  filterTreeArray(flatData.value, props.childKey, searchMethod, !filterText.value);
 }
 
 const selectValue = ref();

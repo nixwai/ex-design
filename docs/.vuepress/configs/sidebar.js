@@ -29,6 +29,7 @@ module.exports = [
           '/components/edit-number',
           '/components/select',
           '/components/more-select',
+          '/components/tree-select',
           '/components/radio-group',
           '/components/checkbox-group',
           '/components/cascader',

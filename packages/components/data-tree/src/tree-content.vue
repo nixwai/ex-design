@@ -7,12 +7,13 @@
           v-if="selectAll && type === 'checkbox'"
           :value="allSelectStatus === 'all'"
           :indeterminate="allSelectStatus === 'half'"
-          class="node-icon"
+          class="ex-node-icon"
+          style="margin-top: 3px"
         />
         <div
-          class="node-text"
+          class="ex-node-text"
           :class="{
-            'node-highlight': highlightCurrent && allSelectStatus === 'all'
+            'ex-node-highlight': highlightCurrent && allSelectStatus === 'all'
           }"
         >
           <slot name="title">
@@ -47,12 +48,12 @@
             >
               <i
                 v-if="!item._LEAF"
-                class="expand-icon el-icon-caret-right"
-                :class="{ 'expand-rotate': item._EXPAND }"
+                class="ex-expand-icon el-icon-caret-right"
+                :class="{ 'ex-expand-rotate': item._EXPAND }"
               />
             </div>
             <!-- 节点内容 -->
-            <div class="node-content">
+            <div class="ex-node-content">
               <template v-if="showSelectIcon && ['checkbox', 'radio'].includes(type)">
                 <div style="height: 100%" @dblclick="handleDblclickNode(item)">
                   <el-checkbox
@@ -60,7 +61,7 @@
                     :value="item._SELECT"
                     :indeterminate="item._HALF"
                     :disabled="disabledMethod(item)"
-                    class="node-icon"
+                    class="ex-node-icon"
                     @click.native.stop="selectTreeNode(item)"
                   />
                   <el-radio
@@ -68,7 +69,7 @@
                     :value="item._SELECT"
                     :label="true"
                     :disabled="disabledMethod(item)"
-                    class="node-icon"
+                    class="ex-node-icon"
                     @click.native.stop="({ pointerId }) => pointerId === 1 && selectTreeNode(item)"
                   >
                     {{ '' }}
@@ -76,10 +77,10 @@
                 </div>
               </template>
               <div
-                class="node-text"
+                class="ex-node-text"
                 :class="{
-                  'node-highlight': highlightCurrent && item._SELECT,
-                  'node-border-bottom': item._FILTER
+                  'ex-node-highlight': highlightCurrent && item._SELECT,
+                  'ex-node-border-bottom': item._FILTER
                 }"
                 :style="{
                   cursor: checkOnClickNode && disabledMethod(item) ? 'not-allowed' : 'pointer'
@@ -269,7 +270,6 @@ defineExpose({
 
     .ex-header-node {
       display: flex;
-      align-items: center;
       overflow: hidden;
       cursor: pointer;
     }
@@ -288,7 +288,7 @@ defineExpose({
       align-items: center;
       cursor: pointer;
 
-      .expand-icon {
+      .ex-expand-icon {
         padding: 6px;
         font-size: 12px;
         color: #c0c4cc;
@@ -296,11 +296,11 @@ defineExpose({
         // TODO transition: transform 200ms;
       }
 
-      .expand-rotate {
+      .ex-expand-rotate {
         transform: rotate(90deg);
       }
 
-      .node-content {
+      .ex-node-content {
         display: flex;
         flex: 1;
         align-items: center;
@@ -314,7 +314,7 @@ defineExpose({
   }
 }
 
-.node-icon {
+.ex-node-icon {
   box-sizing: content-box;
   width: 14px;
   height: 14px;
@@ -328,7 +328,7 @@ defineExpose({
   }
 }
 
-.node-text {
+.ex-node-text {
   box-sizing: border-box;
   display: flex;
   flex: 1;
@@ -341,11 +341,11 @@ defineExpose({
   transition: color 200ms;
 }
 
-.node-border-bottom {
+.ex-node-border-bottom {
   border-bottom-color: #dfdfdf;
 }
 
-.node-highlight {
+.ex-node-highlight {
   color: #409eff;
 }
 </style>
