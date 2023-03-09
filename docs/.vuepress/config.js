@@ -5,7 +5,7 @@ module.exports = {
   title: 'ExDesign',
   description: '基于element-ui、vxe-table3.x组件库进行功能扩展,提供更接近业务场景的组件',
   plugins: ['demo-container'],
-  base: './',
+  base: '/',
   themeConfig: {
     nav,
     sidebar
