@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@ex-design/component': workspace:^0.0.1
+      '@ex-design/component': workspace:^*
       '@juggle/resize-observer': ^3.4.0
       date-fns: ^2.29.3
       element-ui: ^2.15.13
@@ -12,7 +12,6 @@ importers:
       eslint-config-prettier: ^8.6.0
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-vue: ^9.9.0
-      ex-design: workspace:*
       husky: ^8.0.0
       lint-staged: ^13.1.2
       lodash-es: ^4.17.21
@@ -35,7 +34,6 @@ importers:
       '@juggle/resize-observer': 3.4.0
       date-fns: 2.29.3
       element-ui: 2.15.13
-      ex-design: link:packages
       lodash-es: 4.17.21
       vxe-table: 3.6.11_xe-utils@3.5.7
       xe-utils: 3.5.7
@@ -58,6 +56,27 @@ importers:
       stylelint-config-standard: 30.0.1_stylelint@15.2.0
       stylelint-order: 6.0.2_stylelint@15.2.0
       stylelint-scss: 4.4.0_stylelint@15.2.0
+
+  component:
+    specifiers:
+      '@juggle/resize-observer': ^3.4.0
+      date-fns: ^2.29.3
+      element-ui: ^2.15.13
+      lodash-es: ^4.17.21
+      sass: ^1.58.3
+      vue: 2.7.14
+      vxe-table: ^3.6.11
+      xe-utils: ^3.5.7
+    dependencies:
+      '@juggle/resize-observer': 3.4.0
+      date-fns: 2.29.3
+      element-ui: 2.15.13_vue@2.7.14
+      lodash-es: 4.17.21
+      vue: 2.7.14
+      vxe-table: 3.6.11_vue@2.7.14+xe-utils@3.5.7
+      xe-utils: 3.5.7
+    devDependencies:
+      sass: 1.58.3
 
   docs:
     specifiers:
@@ -99,16 +118,16 @@ importers:
     dependencies:
       '@juggle/resize-observer': 3.4.0
       date-fns: 2.29.3
-      element-ui: 2.15.13_vue@2.7.14
       lodash-es: 4.17.21
-      vue: 2.7.14
-      vxe-table: 3.6.11_vue@2.7.14+xe-utils@3.5.7
-      xe-utils: 3.5.7
 
     devDependencies:
       '@vitejs/plugin-vue2': 2.2.0_vite@4.1.4+vue@2.7.14
+      element-ui: 2.15.13_vue@2.7.14
       sass: 1.58.3
       vite: 4.1.4_sass@1.58.3
+      vue: 2.7.14
+      vxe-table: 3.6.11_vue@2.7.14+xe-utils@3.5.7
+      xe-utils: 3.5.7
 
 packages:
 
@@ -1907,7 +1926,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      vite: 4.1.4_sass@1.58.3
+      vite: 4.1.4
       vue: 2.7.14
     dev: true
 
@@ -2850,7 +2869,6 @@ packages:
     resolution: {integrity: sha512-tXBM+1m056MAX0E8TL2iCjg8WvSyXu0Zc8LNtYqrVeyoL3+esHRZ4SieE9fKQyyU09uONjnMEjrNBMqT0mbvmA==}
     dependencies:
       babel-runtime: 6.26.0
-    dev: false
 
   /async/2.6.4:
     resolution: {integrity: sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==}
@@ -2902,7 +2920,6 @@ packages:
 
   /babel-helper-vue-jsx-merge-props/2.0.3:
     resolution: {integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==}
-    dev: false
 
   /babel-loader/8.3.0_idmflsbzmivcz6fnnmcaipezqe:
     resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
@@ -2969,7 +2986,6 @@ packages:
     dependencies:
       core-js: 2.6.12
       regenerator-runtime: 0.11.1
-    dev: false
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -4060,7 +4076,6 @@ packages:
     resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
     deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
-    dev: false
 
   /core-js/3.29.0:
     resolution: {integrity: sha512-VG23vuEisJNkGl6XQmFJd3rEG/so/CNatqeE+7uZAwTSwFeB/qaO0be8xZYUNWprJ/GIwL8aMt9cj1kvbpTZhg==}
@@ -4815,7 +4830,6 @@ packages:
       resize-observer-polyfill: 1.5.1
       throttle-debounce: 1.1.0
       vue: 2.7.14
-    dev: false
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -8316,7 +8330,6 @@ packages:
 
   /normalize-wheel/1.0.1:
     resolution: {integrity: sha512-1OnlAPZ3zgrk8B91HyRj+eVv+kS5u+Z0SCsak6Xil/kmgEia50ga7zfkumayonZrImffAxPU/5WcyGhzetHNPA==}
-    dev: false
 
   /npm-run-path/2.0.2:
     resolution: {integrity: sha512-lJxZYlT4DW/bRUtFh1MQIWqmLwQfAxnqWG4HhEdjMlkrJYnJn0Jrr2u3mgxqaWsdiBc76TYkTG/mhrnYTuzfHw==}
@@ -9542,7 +9555,6 @@ packages:
 
   /regenerator-runtime/0.11.1:
     resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
-    dev: false
 
   /regenerator-runtime/0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
@@ -9685,7 +9697,6 @@ packages:
 
   /resize-observer-polyfill/1.5.1:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
-    dev: false
 
   /resolve-cwd/2.0.0:
     resolution: {integrity: sha512-ccu8zQTrzVr954472aUVPLEcB3YpKSYR3cg/3lo1okzobPBM+1INXBbBZlDbnI/hbEocnf8j0QVo43hQKrbchg==}
@@ -10909,7 +10920,6 @@ packages:
   /throttle-debounce/1.1.0:
     resolution: {integrity: sha512-XH8UiPCQcWNuk2LYePibW/4qL97+ZQ1AN3FNXwZRBNPPowo/NRU5fAlDCSNBJIYCKbioZfuYtMhG4quqoJhVzg==}
     engines: {node: '>=4'}
-    dev: false
 
   /through/2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -11731,7 +11741,6 @@ packages:
     dependencies:
       vue: 2.7.14
       xe-utils: 3.5.7
-    dev: false
 
   /vxe-table/3.6.11_xe-utils@3.5.7:
     resolution: {integrity: sha512-0qkxmbV0RkciRn4YL7eQVQ1YODmw1RP2WUg2wfk6Y3XGdQGBBpKCuWrv/GfCFrTtfWoHKo9Hs6I2MZsZ5LkAUA==}
@@ -12090,7 +12099,6 @@ packages:
 
   /xe-utils/3.5.7:
     resolution: {integrity: sha512-3H+fDBKBR2wLJgyA7k9C/w1Xljx6Maml5ukV0WDY06HjYyGs2FEz6XhcwRCLIDXX4pBP3Gu0nX9DbCeuuRA2Ew==}
-    dev: false
 
   /xml-name-validator/4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
