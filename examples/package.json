@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "2.7.14"
+    "vue": "2.7.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "^2.2.0",
